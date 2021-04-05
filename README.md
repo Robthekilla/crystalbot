@@ -15,8 +15,7 @@ Here is a full list of what features it has:
 - Custom settings like bot owners and prefix and wether to run in *debugMode*
 - Has an intergration for perspective api which lets you detect toxicity
 
-The bot also has a setting called debugMode which logs debugEvents such as when mineflayer-pathfinder updates the path or other things    
-There is also a setting to log when a player joins or leaves
+The bot also has a setting called debugMode which logs debugEvents such as when mineflayer-pathfinder updates the path or other things. There is also a setting to log when a player joins or leaves
 
 ## Installation
 
