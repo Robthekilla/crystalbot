@@ -53,7 +53,7 @@ export default async function init(host: string) {
 	bot.commands = new Map() // A map object where all the commands are stored and loaded
 	bot.database = new Enmap({ name: `${host}`, fetchAll: true, autoFetch: true }) // The database for the server the bot is connected to
 
-	// Add more listeners
+	// Add more listeners (this is optional and you don't need to do this)
 	bot.setMaxListeners(100)
 
 	// Load the plugins
