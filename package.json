@@ -1,0 +1,32 @@
+{
+  "name": "crystal-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/lib/index.js",
+  "scripts": {
+    "test": "npm run build && npm run start",
+    "start": "node lib/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cedx/akismet": "^15.0.0",
+    "akismet-api": "^5.1.0",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
+    "enmap": "^5.8.4",
+    "googleapis": "^68.0.0",
+    "loggaby": "^4.0.3",
+    "minecraft-data": "^2.81.0",
+    "mineflayer": "^3.4.0",
+    "mineflayer-auto-eat": "^2.0.0",
+    "mineflayer-autocrystal": "^0.3.1",
+    "mineflayer-pathfinder": "^1.6.1",
+    "vec3": "^0.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.35"
+  }
+}
