@@ -4,11 +4,11 @@ import dotenv from 'dotenv'
 import eventHandler from './handlers/events'
 import commandHandler from './handlers/commands'
 
+// @ts-ignore
+import AutoEat from 'mineflayer-auto-eat'
 import Mineflayer from 'mineflayer'
 import Loggaby from 'loggaby'
 import Enmap from 'enmap'
-// @ts-ignore
-import AutoEat from 'mineflayer-auto-eat'
 
 import { autoCrystal } from 'mineflayer-autocrystal'
 import { pathfinder } from 'mineflayer-pathfinder'
@@ -28,10 +28,10 @@ const logger = new Loggaby({
 
 // If there is no process argument we just connect to oldfag.org
 const host = process.argv[2] ?? 'oldfag.org'
+
 init(host)
 
 // The export is so we can use it in the disconnect event so we can reconnect
-
 export default async function init(host: string) {
 	// @ts-ignore
 	const bot: CustomBot = Mineflayer.createBot({

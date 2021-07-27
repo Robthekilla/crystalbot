@@ -7,7 +7,6 @@ const command: CommandOptions = {
 	name: 'follow',
 	execute(bot, args, author, defaultMovement) {
         // We follow the player if the player is in range 
-
         const target = bot.players[author] ? bot.players[author].entity : null
 
         if (!target) {

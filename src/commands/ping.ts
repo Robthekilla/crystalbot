@@ -13,14 +13,12 @@ const command: CommandOptions = {
 	name: 'ping',
 	execute(bot, args, author) {
 		if (args.length > 0) {
-			// We filter players that don't have a 0ms ping
 			const players = Object.values(bot.players).filter((player) => player.ping !== 0)
 
 			let player = null
 
 			switch (args[0]) {
 				case 'lowest':
-					// We get the player with the lowest ping
 					player = players.find((player) => player.ping === getLowestLatency(players))
 					bot.chat(`> ${player.username} has the lowest ping with ${player.ping}ms`)
 					break

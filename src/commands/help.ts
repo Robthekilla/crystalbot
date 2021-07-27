@@ -7,7 +7,6 @@ const command: CommandOptions = {
 		const ownerCommands = ['eval', 'reset', 'ignore']
 
 		for (const command of bot.commands.keys()) {
-			// We push an empty string if the command is owner only and the user is not a bot owner
 			if (!bot.owners.includes(author) && ownerCommands.includes(command)) commands.push('')
 			else commands.push(command)
 		}

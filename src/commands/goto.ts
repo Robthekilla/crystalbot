@@ -10,7 +10,6 @@ const command: CommandOptions = {
     execute(bot, args, author, defaultMovement) {
         switch (args.length) {
             default:
-                // If the user provided no arguments we just try and goto thier location if they are in range
                 const target = bot.players[author] ? bot.players[author].entity : null
 
                 if (!target) {

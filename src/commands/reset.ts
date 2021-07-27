@@ -5,7 +5,6 @@ const command: CommandOptions = {
     execute(bot, args, author, defaultMovement) {
         if (!bot.owners.includes(author)) return bot.chat('You cant use this.')
 
-        // We clear all data from the user
         bot.database.delete(`${args[0]}.PROFANITY`)
         bot.database.delete(`${args[0]}.SEVERE_TOXICITY`)
 
