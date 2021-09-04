@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
-    "dotenv": "^8.6.0",
+    "dotenv": "^10.0.0",
     "enmap": "^5.8.7",
     "loggaby": "^4.0.3",
     "minecraft-data": "^2.93.0",
