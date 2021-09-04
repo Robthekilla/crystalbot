@@ -7,12 +7,11 @@ const command: CommandOptions = {
 		const ownerCommands = ['eval', 'reset', 'ignore']
 
 		for (const command of bot.commands.keys()) {
-			if (!bot.owners.includes(author) && ownerCommands.includes(command)) commands.push('')
+			if (!bot.owners.includes(author) && ownerCommands.includes(command)) continue
 			else commands.push(command)
 		}
 
-		// We filter the commands and don't includes strings that are empty
-		bot.chat(`> My commands are: ${commands.filter(command => command.length !== 0).join(', ')}`)
+		bot.chat(`> My commands are: ${commands.join(', ')}`)
 	},
 }
 

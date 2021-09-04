@@ -2,7 +2,7 @@ import { CommandOptions } from '../interfaces/commandOptions'
 
 const command: CommandOptions = {
 	name: 'crystalaura',
-	execute(bot, args, author, defaultMovement) {
+	execute(bot, _args, _author, _defaultMovement) {
         if (bot.AutoCrystalEnabled) {
             bot.autoCrystal.disable()
             bot.AutoCrystalEnabled = false

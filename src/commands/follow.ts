@@ -5,8 +5,7 @@ const { GoalFollow } = goals
 
 const command: CommandOptions = {
 	name: 'follow',
-	execute(bot, args, author, defaultMovement) {
-        // We follow the player if the player is in range 
+	execute(bot, _args, author, defaultMovement) {
         const target = bot.players[author] ? bot.players[author].entity : null
 
         if (!target) {
@@ -16,7 +15,6 @@ const command: CommandOptions = {
         bot.chat(`> Now following ${author}`)
 
         bot.pathfinder.setMovements(defaultMovement)
-        // @ts-ignore
         bot.pathfinder.setGoal(new GoalFollow(target, 3), true)
 	},
 }

@@ -20,7 +20,7 @@ const command: CommandOptions = {
                 bot.chat(`Now ignoring ${player.username}`)
             }
         }
-    }
+    } 
 }
 
 export default command

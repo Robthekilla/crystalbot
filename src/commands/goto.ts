@@ -3,7 +3,9 @@ import { goals } from 'mineflayer-pathfinder'
 
 const { GoalBlock, GoalXZ, GoalY, GoalNear } = goals
 
-let x, y, z = 0
+let x = 0
+let y = 0
+let z = 0
 
 const command: CommandOptions = {
     name: 'goto',
@@ -60,7 +62,7 @@ const command: CommandOptions = {
                 bot.pathfinder.setGoal(new GoalBlock(x, y, z))
                 break
         }
-    },
+    }
 }
 
 export default command

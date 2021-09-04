@@ -38,14 +38,6 @@ const event: EventOptions = {
 			}
 		}, 50)
 
-		setInterval(async () => {
-			const request = bot.messageQueue.shift()
-
-			if (!request) return
-
-			logger.chat(request.output)
-		}, 1000)
-
 		setInterval(() => {
 			const messages: string[] = [
 				'> Want to see how many toxic messages you or someone else has sent? try doing "?toxic" or "?toxic *username*"',
