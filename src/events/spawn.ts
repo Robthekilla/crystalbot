@@ -3,59 +3,58 @@ import { gray } from 'chalk'
 
 // Function for getting a random number
 function getRandomInt(max: number) {
-	return Math.floor(Math.random() * Math.floor(max + 1));
+    return Math.floor(Math.random() * Math.floor(max + 1))
 }
 
 const event: EventOptions = {
-	name: 'spawn',
-	once: true,
-	execute(bot, logger) {
-		logger.log(`${gray(bot.host)} Bot has joined ✔️`)
+    name: 'spawn',
+    once: true,
+    execute(bot, logger) {
+        const prefix = bot.prefix
 
-		// @ts-ignore
-		bot.autoEat.options = {
-			priority: "foodPoints",
-			startAt: 18,
-			bannedFood: ['rotten_flesh', 'pufferfish', 'chorus_fruit'],
-		}
+        logger.log(`${gray(bot.host)} Bot has joined ✔️`)
 
-		bot.runPlayerEvents = false
-		bot.setControlState('forward', true)
+        // @ts-ignore
+        bot.autoEat.options = {
+            priority: 'foodPoints',
+            startAt: 18,
+            bannedFood: ['rotten_flesh', 'pufferfish', 'chorus_fruit']
+        }
 
-		setTimeout(() => {
-			bot.clearControlStates()
-			bot.runPlayerEvents = true
-		}, 1000)
+        bot.runPlayerEvents = false
+        bot.setControlState('forward', true)
 
-		setInterval(() => {
-			const totemName = 'totem_of_undying'
-			const totem = bot.inventory.items().find(item => item.name === totemName)
+        setTimeout(() => {
+            bot.clearControlStates()
+            bot.runPlayerEvents = true
+        }, 1000)
 
-			if (totem && !bot.inventory.slots[45]) {
-				bot.equip(totem, 'off-hand')
-			} else if (totem && bot.inventory.slots[45] && bot.inventory.slots[45].name !== totemName) {
-				bot.equip(totem, 'off-hand')
-			}
-		}, 50)
+        setInterval(() => {
+            const totemName = 'totem_of_undying'
+            const totem = bot.inventory.items().find((item) => item.name === totemName)
 
-		setInterval(() => {
+            if (totem && !bot.inventory.slots[45]) {
+                bot.equip(totem, 'off-hand')
+            } else if (totem && bot.inventory.slots[45] && bot.inventory.slots[45].name !== totemName) {
+                bot.equip(totem, 'off-hand')
+            }
+        }, 50)
+
+        setInterval(() => {
 			const messages: string[] = [
-				'> Want to see how many toxic messages you or someone else has sent? try doing "?toxic" or "?toxic *username*"',
-				'> Want to see how many messages with profanity you or someone else has sent? try doing "?profanity" or "?profanity *username*"',
-				'> You can see who has the most toxic messages with ?toxic highest',
-				'> You can see who has the most messages with profanity with ?profanity highest',
-				'> Make me go anywhere you want using ?goto',
-				'> Did you know you can use ?goto without any parameters to make me walk to you?',
-				'> I can follow you if you use ?follow',
-				'> I also have a Crystal Aura! Use ?crystalaura to enable or disable it'
-			]
+				`> You can see all my commands using ${prefix}help`,
+                `> Make me go anywhere you want using ${prefix}goto`,
+                `> You can use ${prefix}goto without any parameters to make me walk to you`,
+                `> I can follow you if you use ${prefix}follow`,
+                `> Use ${prefix}crystalaura to toggle my crystal aura`
+            ]
 
-			const number = getRandomInt(messages.length)
-			const message: string = messages[number]
+            const number = getRandomInt(messages.length)
+            const message: string = messages[number]
 
-			bot.chat(message)
-		}, 10 * 60 * 1000)
-	},
+            bot.chat(message)
+        }, 10 * 60 * 1000)
+    }
 }
 
 export default event

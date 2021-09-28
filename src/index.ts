@@ -35,7 +35,8 @@ export default async function init(host: string) {
     const bot: CustomBot = Mineflayer.createBot({
         host,
         username: process.env.USERNAME,
-        password: process.env.PASSWORD
+        password: process.env.PASSWORD,
+        auth: 'microsoft'
     })
 
     // Settings
@@ -48,9 +49,8 @@ export default async function init(host: string) {
     bot.AutoCrystalEnabled = false
     bot.host = host
     bot.commands = new Map()
+    bot.aliases = []
     bot.database = new Enmap({ name: `${host}`, fetchAll: true, autoFetch: true })
-
-    bot.setMaxListeners(100)
 
     bot.loadPlugin(pathfinder)
     bot.loadPlugin(autoCrystal)

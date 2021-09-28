@@ -2,7 +2,7 @@ import { CommandOptions } from '../interfaces/commandOptions'
 
 const command: CommandOptions = {
     name: 'ignore',
-    execute(bot, args, author) {
+    execute(bot, logger, args, author) {
         if (!bot.owners.includes(author)) return bot.chat('You cant use this.')
 
         if (args[0]) {
@@ -20,7 +20,7 @@ const command: CommandOptions = {
                 bot.chat(`Now ignoring ${player.username}`)
             }
         }
-    } 
+    }
 }
 
 export default command

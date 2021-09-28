@@ -12,7 +12,8 @@ export interface CustomBot extends Bot {
     debugMode?: boolean
     mode?: string
     messageQueue?: Array<{author: string, message: string, output: string}>
-	commands: Map<string, CommandOptions>
+    commands: Map<string, CommandOptions>
+    aliases?: Array<{ command: string, aliases: string[] }>
     database?: Enmap
     AutoCrystalEnabled: boolean
     autoCrystal: {

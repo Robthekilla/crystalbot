@@ -11,7 +11,7 @@ function getHighestLatency(data: Array<Player>) {
 
 const command: CommandOptions = {
     name: 'ping',
-    execute(bot, args, author) {
+    execute(bot, logger, args, author) {
         if (args.length > 0) {
             const players = Object.values(bot.players).filter((player) => player.ping !== 0)
 

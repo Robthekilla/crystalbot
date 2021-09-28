@@ -21,7 +21,9 @@ const event: EventOptions = {
         const args = message.slice(bot.prefix.length).trim().split(/ +/)
         const commandName = args.shift().toLowerCase()
 
-        if (!bot.commands.get(commandName)) return
+        const alias = bot.aliases.find(a => a.aliases.includes(commandName))
+
+        if (!bot.commands.get(commandName) && !alias) return
 
         try {
             const mcData = minecraftData(bot.version)
@@ -34,7 +36,8 @@ const event: EventOptions = {
             defaultMovement.maxDropDown = 1000
             defaultMovement.scafoldingBlocks.push(mcData.itemsByName.obsidian.id)
 
-            bot.commands.get(commandName).execute(bot, args, author, defaultMovement)
+            if (alias) bot.commands.get(alias.command).execute(bot, logger, args, author, defaultMovement)
+            bot.commands.get(commandName).execute(bot, logger, args, author, defaultMovement)
         } catch (error) {
             logger.error(error)
             bot.chat('There was an error trying to execute that command.')

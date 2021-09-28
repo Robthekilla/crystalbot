@@ -9,7 +9,7 @@ let z = 0
 
 const command: CommandOptions = {
     name: 'goto',
-    execute(bot, args, author, defaultMovement) {
+    execute(bot, logger, args, author, defaultMovement) {
         switch (args.length) {
             default:
                 const target = bot.players[author] ? bot.players[author].entity : null
