@@ -26,7 +26,7 @@ const logger = new Loggaby({
     ]
 })
 
-const host = process.argv[2] ?? 'oldfag.org'
+const host = process.env.HOST ?? 'oldfag.org'
 
 init(host)
 

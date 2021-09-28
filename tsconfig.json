@@ -5,7 +5,7 @@
         "allowJs": true, /* Allow javascript files to be compiled. */
         "checkJs": true, /* Report errors in .js files. */
         "declaration": true,
-        "outDir": "./lib",
+        "outDir": "lib",
         "strict": true,
         "strictNullChecks": false, /* Enable strict null checks. */
         "alwaysStrict": true, /* Parse in strict mode and emit "use strict" for each source file. */
