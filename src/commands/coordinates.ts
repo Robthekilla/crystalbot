@@ -8,7 +8,7 @@ const command: CommandOptions = {
 
         const { x, y, z } = bot.entity.position
 
-        bot.chat(`/msg ${author} X: ${x} Y: ${y} Z: ${z}`)
+        bot.chat(`/msg ${author} X: ${Math.round(x)} Y: ${Math.round(y)} Z: ${Math.round(z)}`)
     }
 }
 
