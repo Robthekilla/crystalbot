@@ -22,7 +22,7 @@
     "mineflayer-armor-manager": "^1.4.2",
     "mineflayer-auto-eat": "^2.3.3",
     "mineflayer-autocrystal": "^0.7.0",
-    "mineflayer-pathfinder": "^1.7.0",
+    "mineflayer-pathfinder": "^1.9.1",
     "vec3": "^0.1.7"
   },
   "devDependencies": {
