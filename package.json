@@ -18,7 +18,7 @@
     "enmap": "^5.8.7",
     "loggaby": "^4.0.3",
     "minecraft-data": "^2.93.0",
-    "mineflayer": "^3.11.1",
+    "mineflayer": "^4.0.0",
     "mineflayer-armor-manager": "^1.4.2",
     "mineflayer-auto-eat": "^2.3.3",
     "mineflayer-autocrystal": "^0.7.0",
